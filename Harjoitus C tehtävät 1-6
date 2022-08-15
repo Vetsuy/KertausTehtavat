@@ -1,0 +1,213 @@
+using System;
+
+namespace HarjoitusC
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Harjoitus C 1 Alkaa //
+
+            Console.WriteLine("Veeti Eskelinen");
+
+            Console.WriteLine("");
+            Console.Write("Anna kokonaisluku 1: ");
+            int numero1 = int.Parse(Console.ReadLine());
+
+            Console.Write("Anna kokonaisluku 2: ");
+            int numero2 = int.Parse(Console.ReadLine());
+
+            if (numero1 > numero2)
+            {
+                Console.WriteLine(numero1);
+                Console.WriteLine(numero2);
+            }
+            else
+            {
+                Console.WriteLine(numero2);
+                Console.WriteLine(numero1);
+            }
+
+            // Harjoitus C 1 Loppuu //
+
+            Console.WriteLine("");
+
+            // Harjoitus C 2 Alkaa //
+
+            Console.Write("Anna kokonaisluku 1: ");
+            int luku1 = int.Parse(Console.ReadLine());
+
+            Console.Write("Anna kokonaisluku 2: ");
+            int luku2 = int.Parse(Console.ReadLine());
+
+            Console.Write("Anna kokonaisluku 3: ");
+            int luku3 = int.Parse(Console.ReadLine());
+
+            if (luku1 > luku2 && luku1 > luku3)
+            {
+                Console.WriteLine(luku1);
+            }
+            else if (luku2 > luku1 && luku2 > luku3)
+            {
+                Console.WriteLine(luku2);
+            }
+            else
+            {
+                Console.WriteLine(luku3);
+            }
+
+            // Harjoitus C 2 Loppuu //
+
+            Console.WriteLine("");
+
+            // Harjoitus C 3 Alkaa //
+
+            Console.Write("Anna luku 1-9 väliltä: ");
+            int luku = int.Parse(Console.ReadLine());
+
+            switch (luku)
+            {
+                case 1:
+                    Console.Write("Yksi");
+                    break;
+                case 2:
+                    Console.Write("Kaksi");
+                    break;
+                case 3:
+                    Console.Write("Kolme");
+                    break;
+                case 4:
+                    Console.Write("Neljä");
+                    break;
+                case 5:
+                    Console.Write("Viisi");
+                    break;
+                case 6:
+                    Console.Write("Kuusi");
+                    break;
+                case 7:
+                    Console.Write("Seitsämän");
+                    break;
+                case 8:
+                    Console.Write("Kahdeksan");
+                    break;
+                case 9:
+                    Console.Write("Yhdeksän");
+                    break;
+                default:
+                    Console.WriteLine("Et valinnu lukua 1-9 väliltä");
+                    break;
+            }
+
+            // Harjoitus C 3 Loppuu //
+
+            Console.WriteLine("");
+
+            // Harjoitus C 4 Alkaa //
+
+            Console.WriteLine("");
+
+            int[] numerot = { 0, 0, 0, 0, 0 };
+
+            for (int i = 0; i < 5; i++)
+            {
+                Console.Write("Anna luku {0}: ", i + 1);
+                numerot[i] = int.Parse(Console.ReadLine());
+            }
+
+            if (numerot[0] > numerot[1] && numerot[0] > numerot[2] && numerot[0] > numerot[3] && numerot[0] > numerot[4])
+            {
+                Console.WriteLine("{0}", numerot[0]);
+            }
+            else if (numerot[1] > numerot[0] && numerot[1] > numerot[2] && numerot[1] > numerot[3] && numerot[1] > numerot[4])
+            {
+                Console.WriteLine("{0}", numerot[1]);
+            }
+            else if (numerot[2] > numerot[1] && numerot[2] > numerot[0] && numerot[2] > numerot[3] && numerot[2] > numerot[4])
+            {
+                Console.WriteLine("{0}", numerot[2]);
+            }
+            else if (numerot[3] > numerot[1] && numerot[3] > numerot[2] && numerot[3] > numerot[0] && numerot[3] > numerot[4])
+            {
+                Console.WriteLine("{0}", numerot[3]);
+            }
+            else
+            {
+                Console.WriteLine("{0}", numerot[4]);
+            }
+
+            // Harjoitus C 4 Loppuu //
+
+            Console.WriteLine("");
+
+            // Harjoitus C 5 Alkaa //
+
+            Console.Write("Syötä kokonaisluku (1), desimaali (2) tai merkkijono (3): ");
+            int vastus = int.Parse(Console.ReadLine());
+
+            switch (vastus)
+            {
+                case 1:
+                    Console.Write("Anna kokonaisluku: ");
+                    int kokonaisluku = int.Parse(Console.ReadLine());
+                    Console.WriteLine("{0}", kokonaisluku + 1);
+                    break;
+                case 2:
+                    Console.Write("Anna desimaaliluku: ");
+                    double desimaali = double.Parse(Console.ReadLine());
+                    Console.WriteLine("{0}", desimaali + 1);
+                    break;
+                case 3:
+                    Console.Write("Anna sana: ");
+                    string merkkijono = Console.ReadLine();
+                    Console.WriteLine("{0}", merkkijono + "*");
+                    break;
+                default:
+                    Console.WriteLine("Väärin!");
+                    break;
+            }
+
+            // Harjoitus C 5 Loppuu //
+
+            Console.WriteLine("");
+
+            // Harjoitus C 6 Alkaa //
+
+            Console.Write("Anna pisteesi (0-9): ");
+            int pisteet = int.Parse(Console.ReadLine());
+
+            if (pisteet > 0 && pisteet < 4)
+            {
+                Console.WriteLine("{0}", pisteet * 10);
+            }
+            else if (pisteet > 3 && pisteet < 7)
+            {
+                Console.WriteLine("{0}", pisteet * 100);
+            }
+            else if (pisteet > 6 && pisteet < 9)
+            {
+                Console.WriteLine("{0}", pisteet * 1000);
+            }
+            else
+            {
+                Console.WriteLine("Ei ole totta, kokeile uudestaan.");
+            }
+
+            // Harjoitus C 6 Loppuu //
+
+            Console.WriteLine("");
+
+            // Harjoitus C 7 Alkaa //
+
+            string[] yksiköt = { "Nolla", "Yksi", "Kaksi", "Kolme",
+            "Neljä", "Viisi", "Kuusi", "Seitsämän", "Kahdeksan", "Yhdeksän", "Kymmenen", "Yksitoista",
+            "Kaksitoista", "Kolmetoista", "Neljätoista", "Viisitoista", "Kuusitoista",
+            "Seitsämäntoista", "Kahdeksantoista", "Yhdeksäntoista" };
+
+            string[] kymmenet = { "", "", "Kaksikymmentä", "Kolmekymmentä", "Neljäkymmentä",
+            "Viisikymmentä", "Kuusikymmentä", "Seitsämänkymmentä", "Kahdeksankymmentä", "Yhdeksänkymmentä" };
+
+            // Harjoitus C 7 Loppuu //
+        }
+    }
+}
