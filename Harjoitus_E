@@ -1,0 +1,149 @@
+using System;
+
+namespace Harjoitus_E
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Veeti Eskelinen");
+            Console.WriteLine();
+
+            // Tehtävä 11 alkaa
+
+            Console.Write("Anna ikäsi: ");
+            int ika = int.Parse(Console.ReadLine());  
+            
+            Console.WriteLine("{0} - Näytät ikäistäsi nuoremmalta", ika);
+
+            // Tehtävä 11 loppuu
+
+            Console.WriteLine();
+
+            // Tehtävä 12 alkaa
+
+            Console.Write("Anna 10 isompi kokonaisluku: ");
+            int luku = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i <= luku; i++)
+            {
+                Console.WriteLine(luku);
+            }
+
+            // Tehtävä 12 loppuu
+
+            Console.WriteLine();
+
+            // Tehtävä 13 alkaa
+
+            Console.Write("Anna sana: ");
+            string sana = Console.ReadLine();
+
+            string[] sanat = sana.Split(' ');
+
+            char[] kirjaimet;
+            string eka, vika;
+            string oikein, toisinpain;
+            string tulos = string.Empty;
+
+            for (int i = 0; i < sanat.Length; i++)
+            {
+                kirjaimet = sanat[i].ToCharArray();
+                eka = new string(kirjaimet[0], 1);
+                vika = new string(kirjaimet[kirjaimet.Length - 1], 1);
+                oikein = eka.ToLower();
+                toisinpain = vika.ToLower();
+
+                kirjaimet[kirjaimet.Length - 1] = oikein.ToCharArray()[0];
+                kirjaimet[0] = toisinpain.ToCharArray()[0];
+
+                tulos += new string(kirjaimet);
+                tulos += " ";
+            }
+
+            Console.WriteLine(tulos);
+
+            // Tehtävä 13 loppuu
+
+            Console.WriteLine();
+
+            // Tehtävä 14 alkaa
+
+            int[] luvut = { 0, 0 };
+
+            for (int i = 0; i < 2; i++)
+            {
+                Console.Write("Anna kokonaisluku: ");
+                luvut[i] = int.Parse(Console.ReadLine());
+            }
+            
+            if (luvut[0] > 0 && luvut[1] > 0)
+            {
+                Console.WriteLine("Molemmat ovat positiivisia");
+            }
+            else if (luvut[0] < 0 && luvut[1] < 0)
+            {
+                Console.WriteLine("Molemmat ovat negatiivisia");
+            }
+            else if (luvut[0] < 0 && luvut[1] > 0 || luvut[0] > 0 && luvut[1] < 0)
+            {
+                Console.WriteLine("Toinen on positiivinen ja toinen negatiivinen");
+            }
+
+            // Tehtävä 14 loppuu
+
+            Console.WriteLine();
+
+            // Tehtävä 15 alkaa
+
+            Console.Write("Kirjoita lause: ");
+            string lause = Console.ReadLine();
+
+            string[] sanat1 = lause.Split(new[] { " " }, StringSplitOptions.None);
+            string sana1 = "";
+            int pituus = 0;
+            foreach (String pisin in sanat1)
+            {
+                if (pisin.Length > pituus)
+                {
+                    sana1 = pisin;
+                    pituus = pisin.Length;
+                }
+            }
+
+            Console.WriteLine(sana1);
+
+            // Tehtävä 15 loppuu
+
+            Console.WriteLine();
+
+            // Tehtävä 16 alkaa
+
+            Console.WriteLine("Parittomat luvut");
+            for (int i = 1; i < (99 + 1); i++)
+            {
+                if (i % 2 != 0)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+
+            // Tehtävä 16 loppuu
+
+            Console.WriteLine();
+
+            // Tehtävä 17 alkaa
+
+            Console.WriteLine("Kolmella Jaolliset luvut");
+            for (int i = 1; i <= 99; i++)
+            {
+                if (i % 3 == 0)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+
+            // Tehtävä 17 loppuu
+        }
+    }
+}
