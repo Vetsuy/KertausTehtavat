@@ -1,0 +1,124 @@
+using System;
+
+namespace Harjoitus_D
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Veeti Eskelinen");
+            Console.WriteLine();
+
+            // Tehtävä 1 alkaa
+
+            Console.Write("Anna numero: ");
+            int numero1 = int.Parse(Console.ReadLine());
+
+            Console.Write("Anna toinen numero: ");
+            int numero2 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine(numero1 + numero2);
+
+            // Tehtävä 1 loppuu
+
+            Console.WriteLine();
+
+            // Tehtävä 2 alkaa
+
+            Console.Write("Anna celcius aste: ");
+            int celcius = int.Parse(Console.ReadLine());
+
+            Console.WriteLine(celcius * 1.8 + 32);
+
+            // Tehtävä 2 loppuu
+
+            Console.WriteLine();
+
+            // Tehtävä 3 alkaa
+
+            double[] luvut = { 0, 0 };
+
+            for (int i = 0; i < 2; i++)
+            {
+                Console.Write("Anna luku: ");
+                luvut[i] = double.Parse(Console.ReadLine());
+            }  
+
+            Console.WriteLine("{0}, {1}, {2}, {3}", luvut[0] + luvut[1], luvut[0] - luvut[1], luvut[0] * luvut[1], luvut[0] / luvut[1]);
+
+            // Tehtävä 3 loppuu
+
+            Console.WriteLine();
+
+            // Tehtävä 4 alkaa
+
+            int[] jaannostaulukko = { 0, 0 };
+
+            for (int i = 0; i < 2; i++)
+            {
+                Console.Write("Anna luku: ");
+                jaannostaulukko[i] = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine(luvut[0] % luvut[1]);
+
+            // Tehtävä 4 loppuu
+
+            Console.WriteLine();
+
+            // Tehtävä 5 alkaa
+
+            
+
+            // Tehtävä 5 loppuu
+
+            Console.WriteLine();
+
+            // Tehtävä 6 alkaa
+
+
+
+            // Tehtävä 6 loppuu
+
+            Console.WriteLine();
+
+            // Tehtävä 7 alkaa
+
+
+
+            // Tehtävä 7 loppuu
+
+            Console.WriteLine();
+
+            // Tehtävä 8 alkaa
+
+
+
+            // Tehtävä 8 loppuu
+
+            Console.WriteLine();
+
+            // Tehtävä 9 alkaa
+
+
+
+            // Tehtävä 9 loppuu
+
+            Console.WriteLine();
+
+            // Tehtävä 10 alkaa
+
+            Console.Write("Anna kokonaisluku 1-10 väliltä: ");
+            int luku = int.Parse(Console.ReadLine());
+            int kierros = 1;
+
+            while ( kierros < 11)
+            {
+                Console.WriteLine("{0} x {1} = {2}", luku, kierros, luku * kierros);
+                kierros++;
+            }
+
+            // Tehtävä 10 loppuu
+        }
+    }
+}
