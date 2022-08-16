@@ -199,13 +199,78 @@ namespace HarjoitusC
 
             // Harjoitus C 7 Alkaa //
 
-            string[] yksiköt = { "Nolla", "Yksi", "Kaksi", "Kolme",
-            "Neljä", "Viisi", "Kuusi", "Seitsämän", "Kahdeksan", "Yhdeksän", "Kymmenen", "Yksitoista",
-            "Kaksitoista", "Kolmetoista", "Neljätoista", "Viisitoista", "Kuusitoista",
-            "Seitsämäntoista", "Kahdeksantoista", "Yhdeksäntoista" };
+            using System;
 
-            string[] kymmenet = { "", "", "Kaksikymmentä", "Kolmekymmentä", "Neljäkymmentä",
-            "Viisikymmentä", "Kuusikymmentä", "Seitsämänkymmentä", "Kahdeksankymmentä", "Yhdeksänkymmentä" };
+namespace Harjoituksia_C_viimeinen
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Veeti Eskelinen");
+            Console.WriteLine("");
+
+            string[] yksiköt =
+            {
+                "Nolla",
+                "yksi",
+                "kaksi",
+                "kolme",
+                "neljä",
+                "viisi",
+                "kuusi",
+                "seitsämän",
+                "kahdeksan",
+                "yhdeksän",
+                "kymmenen",
+                "yksitoista",
+                "kaksitoista",
+                "kolmetoista",
+                "neljätoista",
+                "viisitoista",
+                "kuusitoista",
+                "seitsämäntoista",
+                "kahdeksantoista",
+                "yhdeksäntoista"
+            };
+            // Taulukko 0-19
+
+            string[] kymmenet =
+            {
+
+                "kaksikymmentä",
+                "kolmekymmentä",
+                "neljäkymmentä",
+                "viisikymmentä",
+                "kuusikymmentä",
+                "seitsämänkymmentä",
+                "kahdeksankymmentä",
+                "yhdeksänkymmentä"
+            };
+            // Taulukko 10-90
+
+            Console.Write("Anna numero 0-999: ");
+            string luku = Console.ReadLine();   // Lukee annetun luvun string-muodossa
+            int numero = int.Parse(luku);
+
+            Console.WriteLine("");
+
+            if (numero < 20)
+            {
+                Console.WriteLine(yksiköt[int.Parse(luku)]);
+            }
+
+            else if (numero >= 20 && numero <= 99 )
+            {
+                if (luku.EndsWith("0"))
+                {
+                    Console.WriteLine(kymmenet[int.Parse(luku.Substring(0, 1))-2]);
+                }
+            }
+        }
+    }
+}
+
 
             // Harjoitus C 7 Loppuu //
         }
