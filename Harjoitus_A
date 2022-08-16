@@ -1,0 +1,65 @@
+using System;
+
+namespace KertausProjekti
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hyvää päivää!");
+        }
+    }
+}
+
+
+
+
+using System;
+
+namespace OmaNimi
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Veeti Eskelinen");
+        }
+    }
+}
+
+
+
+
+using System;
+
+namespace YksiNumero
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("1");
+            Console.WriteLine("11");
+            Console.WriteLine("101");
+            Console.WriteLine("1001");
+        }
+    }
+}
+
+
+
+
+using System;
+
+namespace NimiKysymys
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Anna nimesi: ");
+            string nimi = Console.ReadLine();
+            Console.WriteLine("Hei {0}", nimi);
+        }
+    }
+}
