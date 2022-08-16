@@ -1,0 +1,45 @@
+using System;
+
+namespace HarjoituksiaBMatematiikka
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Veeti Eskelinen");
+            Console.WriteLine("");
+            Console.Write("Anna y:n arvo: ");
+            int y = int.Parse(Console.ReadLine());
+            Console.Write("Anna x:n arvo: ");
+            int x = int.Parse(Console.ReadLine());
+            int xn = x;
+            int yn = y;
+
+            int vastaus = y + 3;
+            Console.WriteLine("tulostus x = {0}", vastaus);
+            vastaus = y - 2;
+            Console.WriteLine("tulostus x = {0}", vastaus);
+            vastaus = y * 5;
+            Console.WriteLine("tulostus x = {0}", vastaus);
+            vastaus = x / y;
+            Console.WriteLine("tulostus x = {0}", vastaus);
+            vastaus = x % y;
+            Console.WriteLine("tulostus x = {0}", vastaus);
+            vastaus = x += y;
+            Console.WriteLine("tulostus x = {0}", vastaus);
+            x = xn;
+            y = yn;
+            vastaus = x -= y;
+            Console.WriteLine("tulostus x = {0}", vastaus);
+            x = xn;
+            y = yn;
+            vastaus = x *= y*5;
+            Console.WriteLine("tulostus x = {0}", vastaus);
+            x = xn;
+            y = yn;
+            vastaus = x /= y;
+            Console.WriteLine("tulostus x = {0}", vastaus);
+
+        }
+    }
+}
