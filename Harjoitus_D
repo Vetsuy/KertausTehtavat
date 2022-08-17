@@ -11,6 +11,49 @@ namespace Harjoitus_D
 
             // Tehtävä 1 alkaa
 
+            Console.WriteLine(1 + 2);
+
+            // Tehtävä 1 loppuu
+
+            Console.WriteLine();
+
+            // Tehtävä 2 alkaa
+
+            Console.WriteLine(15 * 1.8 + 32);
+
+            // Tehtävä 2 loppuu
+
+            Console.WriteLine();
+
+            // Tehtävä 3 alkaa
+
+            Console.WriteLine("{0}, {1}, {2}, {3}", 1 + 2, 5 - 3, 1 * 3, 8 / 2);
+
+            // Tehtävä 3 loppuu
+
+            Console.WriteLine();
+
+            // Tehtävä 4 alkaa
+
+            Console.WriteLine(13 % 4);
+
+            // Tehtävä 4 loppuu
+
+            Console.WriteLine();
+
+            // Tehtävä 5 alkaa
+
+            Console.Write("Anna nimesi: ");
+            string nimi = Console.ReadLine();
+
+            Console.WriteLine("Hei, {0}", nimi);
+
+            // Tehtävä 5 loppuu
+
+            Console.WriteLine();
+
+            // Tehtävä 6 alkaa
+
             Console.Write("Anna numero: ");
             int numero1 = int.Parse(Console.ReadLine());
 
@@ -19,22 +62,22 @@ namespace Harjoitus_D
 
             Console.WriteLine(numero1 + numero2);
 
-            // Tehtävä 1 loppuu
+            // Tehtävä 6 loppuu
 
             Console.WriteLine();
 
-            // Tehtävä 2 alkaa
+            // Tehtävä 7 alkaa
 
             Console.Write("Anna celcius aste: ");
             int celcius = int.Parse(Console.ReadLine());
 
             Console.WriteLine(celcius * 1.8 + 32);
 
-            // Tehtävä 2 loppuu
+            // Tehtävä 7 loppuu
 
             Console.WriteLine();
 
-            // Tehtävä 3 alkaa
+            // Tehtävä 8 alkaa
 
             double[] luvut = { 0, 0 };
 
@@ -42,15 +85,16 @@ namespace Harjoitus_D
             {
                 Console.Write("Anna luku: ");
                 luvut[i] = double.Parse(Console.ReadLine());
-            }  
+            }
 
             Console.WriteLine("{0}, {1}, {2}, {3}", luvut[0] + luvut[1], luvut[0] - luvut[1], luvut[0] * luvut[1], luvut[0] / luvut[1]);
 
-            // Tehtävä 3 loppuu
+            // Tehtävä 8 loppuu
 
             Console.WriteLine();
 
-            // Tehtävä 4 alkaa
+            // Tehtävä 9 alkaa
+
 
             int[] jaannostaulukko = { 0, 0 };
 
@@ -62,46 +106,6 @@ namespace Harjoitus_D
 
             Console.WriteLine(luvut[0] % luvut[1]);
 
-            // Tehtävä 4 loppuu
-
-            Console.WriteLine();
-
-            // Tehtävä 5 alkaa
-
-            
-
-            // Tehtävä 5 loppuu
-
-            Console.WriteLine();
-
-            // Tehtävä 6 alkaa
-
-
-
-            // Tehtävä 6 loppuu
-
-            Console.WriteLine();
-
-            // Tehtävä 7 alkaa
-
-
-
-            // Tehtävä 7 loppuu
-
-            Console.WriteLine();
-
-            // Tehtävä 8 alkaa
-
-
-
-            // Tehtävä 8 loppuu
-
-            Console.WriteLine();
-
-            // Tehtävä 9 alkaa
-
-
-
             // Tehtävä 9 loppuu
 
             Console.WriteLine();
@@ -112,7 +116,7 @@ namespace Harjoitus_D
             int luku = int.Parse(Console.ReadLine());
             int kierros = 1;
 
-            while ( kierros < 11)
+            while (kierros < 11)
             {
                 Console.WriteLine("{0} x {1} = {2}", luku, kierros, luku * kierros);
                 kierros++;
