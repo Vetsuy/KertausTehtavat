@@ -199,17 +199,6 @@ namespace HarjoitusC
 
             // Harjoitus C 7 Alkaa //
 
-            using System;
-
-namespace Harjoituksia_C_viimeinen
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Veeti Eskelinen");
-            Console.WriteLine("");
-
             string[] yksiköt =
             {
                 "Nolla",
@@ -251,27 +240,77 @@ namespace Harjoituksia_C_viimeinen
 
             Console.Write("Anna numero 0-999: ");
             string luku = Console.ReadLine();   // Lukee annetun luvun string-muodossa
-            int numero = int.Parse(luku);
+            int numero = int.Parse(luku);   // Numero muuttujan on luku parsettuna lyhentääkseen koodia
 
             Console.WriteLine("");
 
-            if (numero < 20)
+            if (numero < 20)    // Numerot 1-19
             {
-                Console.WriteLine(yksiköt[int.Parse(luku)]);
+                Console.WriteLine(yksiköt[int.Parse(luku)]);    // Tulostaa 1-19
             }
 
-            else if (numero >= 20 && numero <= 99 )
+            else if (numero > 19 && numero < 100 )    // Numerot 20-99 
             {
-                if (luku.EndsWith("0"))
+                if (luku.EndsWith("0"))     // Tasa kymmenet
                 {
-                    Console.WriteLine(kymmenet[int.Parse(luku.Substring(0, 1))-2]);
+                    Console.WriteLine(kymmenet[int.Parse(luku.Substring(0, 1)) -2]);     // Tulostaa tasa kymmenen
+                }
+
+                else    // Epätasaiset kymmenet
+                {
+                    Console.WriteLine("{0} {1}",kymmenet[int.Parse(luku.Substring(0, 1)) - 2], yksiköt[int.Parse(luku.Substring(1))]);
                 }
             }
-        }
-    }
-}
 
+            else if (numero > 99 && numero < 1000)   // Luvut 100-999
+            {
+                if (numero == 100)   // Sadan
+                {
+                    Console.WriteLine("sata");
+                }
 
+                else if (numero > 100 && numero < 120)      // Epätasaiset sadat 101-119
+                {
+                    Console.WriteLine("sata {0}", yksiköt[int.Parse(luku.Substring(1))]);
+                }
+                
+                else if (numero > 119 && numero < 199)      // Luvut 120-199
+                {
+                    if (luku.EndsWith("0"))
+                    {
+                        Console.WriteLine("sata {0}", kymmenet[int.Parse(luku.Substring(1, 1)) - 2]);
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("sata {0} {1}", kymmenet[int.Parse(luku.Substring(1, 1)) - 2], yksiköt[int.Parse(luku.Substring(2))]);
+                    }
+                }
+
+                else if (numero > 199 && numero < 1000)
+                {
+                    if (luku.EndsWith("00"))
+                    {
+                        Console.WriteLine("{0}sataa", yksiköt[int.Parse(luku.Substring(0, 1))]);
+                    }
+
+                    else if (luku.EndsWith("0"))
+                    {
+                        Console.WriteLine("{0}sataa {1}", yksiköt[int.Parse(luku.Substring(0, 1))], kymmenet[int.Parse(luku.Substring(1, 1)) - 2]);
+                    }
+
+                    else if (luku.Substring(1, 1) == "0")
+                    {
+                        Console.WriteLine("{0}sataa {1}", yksiköt[int.Parse(luku.Substring(0, 1))], yksiköt[int.Parse(luku.Substring(2))]);
+                    }
+
+                    else    // Epätasaiset loput sadat
+                    {
+                        Console.WriteLine("{0}sataa {1} {2}", yksiköt[int.Parse(luku.Substring(1, 1))], kymmenet[int.Parse(luku.Substring(1, 1)) - 2], yksiköt[int.Parse(luku.Substring(2))]);      // Tulostaa epätasaiset sadat esim: 473
+                    }
+                }
+            }
+            
             // Harjoitus C 7 Loppuu //
         }
     }
