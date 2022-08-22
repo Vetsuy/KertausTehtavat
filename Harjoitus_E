@@ -1,6 +1,6 @@
 using System;
 
-namespace Harjoitus_E
+namespace Harjoituksia_E
 {
     internal class Program
     {
