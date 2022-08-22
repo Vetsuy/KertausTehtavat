@@ -9,315 +9,368 @@ namespace Harjoituksia_C
             // Harjoitus C 1 Alkaa //
 
             Console.WriteLine("Veeti Eskelinen");
+            Console.WriteLine();
 
-            Console.WriteLine("");
-            Console.Write("Anna kokonaisluku 1: ");
-            int numero = int.Parse(Console.ReadLine());
-
-            Console.Write("Anna kokonaisluku 2: ");
-            int numero1 = int.Parse(Console.ReadLine());
-
-            if (numero > numero1)
+            int valinta = 1;
+            do
             {
-                Console.WriteLine(numero);
-                Console.WriteLine(numero1);
-            }
-            else
-            {
-                Console.WriteLine(numero1);
-                Console.WriteLine(numero);
-            }
+                alku:
+                Console.WriteLine();
+                Console.WriteLine("Valitse mitä seuraavista halua kokeilla:");
+                Console.WriteLine("----------------------------------------------------------");
+                Console.WriteLine("(1). Ohjelma, joka vaihtaa lukujen suuruusjärjestystä.");
+                Console.WriteLine("(2). Ohjelma, joka etsii suurimman luvun kolmesta.");
+                Console.WriteLine("(3). Ohjelma, joka tulostaa numeron 1-9 sanana.");
+                Console.WriteLine("(4). Ohjelma, joka etsii suurimman viidestä luvusta.");
+                Console.WriteLine("(5). Ohjelma, joka kysyy mitä haluat syöttää, jonka jälkeen tekee taikojaan.");
+                Console.WriteLine("(6). Ohjelma, joka kasvattaa pisteitäsi.");
+                Console.WriteLine("(7). Ohjelma, joka muuttaa luvun 0-999 väliltä sanaksi.");
+                Console.WriteLine("----------------------------------------------------------");
+                Console.Write("Valitse numero 1-7 jatkaaksesi tai 0 halutessasi lopettaa: ");
+                valinta = int.Parse(Console.ReadLine());
 
-            // Harjoitus C 1 Loppuu //
+                Console.WriteLine();
 
-            Console.WriteLine("");
-
-            // Harjoitus C 2 Alkaa //
-
-            Console.Write("Anna kokonaisluku 1: ");
-            int luku1 = int.Parse(Console.ReadLine());
-
-            Console.Write("Anna kokonaisluku 2: ");
-            int luku2 = int.Parse(Console.ReadLine());
-
-            Console.Write("Anna kokonaisluku 3: ");
-            int luku3 = int.Parse(Console.ReadLine());
-
-            if (luku1 > luku2 && luku1 > luku3)
-            {
-                Console.WriteLine(luku1);
-            }
-            else if (luku2 > luku1 && luku2 > luku3)
-            {
-                Console.WriteLine(luku2);
-            }
-            else
-            {
-                Console.WriteLine(luku3);
-            }
-
-            // Harjoitus C 2 Loppuu //
-
-            Console.WriteLine("");
-
-            // Harjoitus C 3 Alkaa //
-
-            Console.Write("Anna luku 1-9 väliltä: ");
-            int luku = int.Parse(Console.ReadLine());
-
-            switch (luku)
-            {
-                case 1:
-                    Console.Write("Yksi");
-                    break;
-                case 2:
-                    Console.Write("Kaksi");
-                    break;
-                case 3:
-                    Console.Write("Kolme");
-                    break;
-                case 4:
-                    Console.Write("Neljä");
-                    break;
-                case 5:
-                    Console.Write("Viisi");
-                    break;
-                case 6:
-                    Console.Write("Kuusi");
-                    break;
-                case 7:
-                    Console.Write("Seitsämän");
-                    break;
-                case 8:
-                    Console.Write("Kahdeksan");
-                    break;
-                case 9:
-                    Console.Write("Yhdeksän");
-                    break;
-                default:
-                    Console.WriteLine("Et valinnu lukua 1-9 väliltä");
-                    break;
-            }
-
-            // Harjoitus C 3 Loppuu //
-
-            Console.WriteLine("");
-
-            // Harjoitus C 4 Alkaa //
-
-            Console.WriteLine("");
-
-            int[] numerot = { 0, 0, 0, 0, 0 };
-
-            for (int i = 0; i < 5; i++)
-            {
-                Console.Write("Anna luku {0}: ", i + 1);
-                numerot[i] = int.Parse(Console.ReadLine());
-            }
-
-            if (numerot[0] > numerot[1] && numerot[0] > numerot[2] && numerot[0] > numerot[3] && numerot[0] > numerot[4])
-            {
-                Console.WriteLine("{0}", numerot[0]);
-            }
-            else if (numerot[1] > numerot[0] && numerot[1] > numerot[2] && numerot[1] > numerot[3] && numerot[1] > numerot[4])
-            {
-                Console.WriteLine("{0}", numerot[1]);
-            }
-            else if (numerot[2] > numerot[1] && numerot[2] > numerot[0] && numerot[2] > numerot[3] && numerot[2] > numerot[4])
-            {
-                Console.WriteLine("{0}", numerot[2]);
-            }
-            else if (numerot[3] > numerot[1] && numerot[3] > numerot[2] && numerot[3] > numerot[0] && numerot[3] > numerot[4])
-            {
-                Console.WriteLine("{0}", numerot[3]);
-            }
-            else
-            {
-                Console.WriteLine("{0}", numerot[4]);
-            }
-
-            // Harjoitus C 4 Loppuu //
-
-            Console.WriteLine("");
-
-            // Harjoitus C 5 Alkaa //
-
-            Console.Write("Syötä kokonaisluku (1), desimaali (2) tai merkkijono (3): ");
-            int vastus = int.Parse(Console.ReadLine());
-
-            switch (vastus)
-            {
-                case 1:
-                    Console.Write("Anna kokonaisluku: ");
-                    int kokonaisluku = int.Parse(Console.ReadLine());
-                    Console.WriteLine("{0}", kokonaisluku + 1);
-                    break;
-                case 2:
-                    Console.Write("Anna desimaaliluku: ");
-                    double desimaali = double.Parse(Console.ReadLine());
-                    Console.WriteLine("{0}", desimaali + 1);
-                    break;
-                case 3:
-                    Console.Write("Anna sana: ");
-                    string merkkijono = Console.ReadLine();
-                    Console.WriteLine("{0}", merkkijono + "*");
-                    break;
-                default:
-                    Console.WriteLine("Väärin!");
-                    break;
-            }
-
-            // Harjoitus C 5 Loppuu //
-
-            Console.WriteLine("");
-
-            // Harjoitus C 6 Alkaa //
-
-            Console.Write("Anna pisteesi (0-9): ");
-            int pisteet = int.Parse(Console.ReadLine());
-
-            if (pisteet > 0 && pisteet < 4)
-            {
-                Console.WriteLine("{0}", pisteet * 10);
-            }
-            else if (pisteet > 3 && pisteet < 7)
-            {
-                Console.WriteLine("{0}", pisteet * 100);
-            }
-            else if (pisteet > 6 && pisteet < 10)
-            {
-                Console.WriteLine("{0}", pisteet * 1000);
-            }
-            else
-            {
-                Console.WriteLine("Ei ole totta, kokeile uudestaan.");
-            }
-
-            // Harjoitus C 6 Loppuu //
-
-            Console.WriteLine("");
-
-            // Harjoitus C 7 Alkaa //
-
-            string[] yksiköt =
-            {
-                "Nolla",
-                "yksi",
-                "kaksi",
-                "kolme",
-                "neljä",
-                "viisi",
-                "kuusi",
-                "seitsämän",
-                "kahdeksan",
-                "yhdeksän",
-                "kymmenen",
-                "yksitoista",
-                "kaksitoista",
-                "kolmetoista",
-                "neljätoista",
-                "viisitoista",
-                "kuusitoista",
-                "seitsämäntoista",
-                "kahdeksantoista",
-                "yhdeksäntoista"
-            };
-            // Taulukko 0-19
-
-            string[] kymmenet =
-            {
-
-                "kaksikymmentä",
-                "kolmekymmentä",
-                "neljäkymmentä",
-                "viisikymmentä",
-                "kuusikymmentä",
-                "seitsämänkymmentä",
-                "kahdeksankymmentä",
-                "yhdeksänkymmentä"
-            };
-            // Taulukko 10-90
-
-            Console.Write("Anna luku 0-999 väliltä: ");
-            string annettuluku = Console.ReadLine();   // Lukee annetun luvun string-muodossa
-            int numero2 = int.Parse(annettuluku);   // Numero muuttujan on annettuluku parsettuna lyhentääkseen koodia
-
-            Console.WriteLine("");
-
-            if (numero2 < 20)    // Numerot 1-19
-            {
-                Console.WriteLine(yksiköt[int.Parse(annettuluku)]);    // Tulostaa 1-19
-            }
-
-            else if (numero2 > 19 && numero2 < 100)    // Numerot 20-99 
-            {
-                if (annettuluku.EndsWith("0"))     // Tasa kymmenet
+                if (valinta < 1 || valinta > 7)
                 {
-                    Console.WriteLine(kymmenet[int.Parse(annettuluku.Substring(0, 1)) - 2]);     // Tulostaa tasa kymmenen
+                    Console.WriteLine("Valitsemasi numero ei ole listalla. Kokeile uudestaan.");
+                    goto alku;
                 }
 
-                else    // Epätasaiset kymmenet
+                switch (valinta)
                 {
-                    Console.WriteLine("{0} {1}", kymmenet[int.Parse(annettuluku.Substring(0, 1)) - 2], yksiköt[int.Parse(annettuluku.Substring(1))]);
-                }
-            }
+                    case 1:
+                        Console.WriteLine("Syötä kahden luvun arvot, niin tulostan ne suuruusjärjestyksessä.");
+                        Console.WriteLine("--------------------------------------------------");
 
-            else if (numero2 > 99 && numero2 < 1000)   // Luvut 100-999
-            {
-                if (numero2 == 100)   // Sadan
+                        Console.Write("Anna ensimmäisen kokonaisluvun arvo: ");
+                        int numero = int.Parse(Console.ReadLine());
+
+                        Console.Write("Anna toisen kokonaisluvun arvo: ");
+                        int numero1 = int.Parse(Console.ReadLine());
+
+                        if (numero > numero1)
+                        {
+                            Console.WriteLine(numero);
+                            Console.WriteLine(numero1);
+                        }
+                        else if (numero1 > numero)
+                        {
+                            Console.WriteLine(numero1);
+                            Console.WriteLine(numero);
+                        }
+                        break;
+
+                    case 2:
+                        Console.WriteLine("Syötä kolme eri lukua, niin tulostan niistä suurimman.");
+                        Console.WriteLine("----------------------------------------------------");
+
+                        Console.Write("Anna ensimmäinen kokonaisluku: ");
+                        int luku1 = int.Parse(Console.ReadLine());
+
+                        Console.Write("Anna toinen kokonaisluku: ");
+                        int luku2 = int.Parse(Console.ReadLine());
+
+                        Console.Write("Anna kolmas kokonaisluku: ");
+                        int luku3 = int.Parse(Console.ReadLine());
+
+                        if (luku1 > luku2 && luku1 > luku3)
+                        {
+                            Console.WriteLine(luku1);
+                        }
+
+                        else if (luku2 > luku1 && luku2 > luku3)
+                        {
+                            Console.WriteLine(luku2);
+                        }
+
+                        else
+                        {
+                            Console.WriteLine(luku3);
+                        }
+                        break;
+
+                    case 3:
+                        takaisin:
+
+                        Console.WriteLine("Syötä numero 1-9 väliltä, niin tulostan sen sanana.");
+                        Console.WriteLine("--------------------------------------------------");
+
+                        Console.Write("Anna numero: ");
+                        int luku = int.Parse(Console.ReadLine());
+
+                        switch (luku)
+                        {
+                            case 1:
+                                Console.Write("Yksi");
+                                break;
+                            case 2:
+                                Console.Write("Kaksi");
+                                break;
+                            case 3:
+                                Console.Write("Kolme");
+                                break;
+                            case 4:
+                                Console.Write("Neljä");
+                                break;
+                            case 5:
+                                Console.Write("Viisi");
+                                break;
+                            case 6:
+                                Console.Write("Kuusi");
+                                break;
+                            case 7:
+                                Console.Write("Seitsämän");
+                                break;
+                            case 8:
+                                Console.Write("Kahdeksan");
+                                break;
+                            case 9:
+                                Console.Write("Yhdeksän");
+                                break;
+                            default:
+                                Console.WriteLine("Et valinnu lukua 1-9 väliltä, yritä uudelleen.");
+                                goto takaisin;
+                        }
+                        break;
+
+                    case 4:
+                        Console.WriteLine("Syötä viisi eri kokonailukua, niin tulostan niistä suurimman.");
+                        Console.WriteLine("------------------------------------------------------------");
+
+                        int[] numerot = { 0, 0, 0, 0, 0 };
+
+                        for (int i = 0; i < 5; i++)
+                        {
+                            Console.Write("Anna luku {0}: ", i + 1);
+                            numerot[i] = int.Parse(Console.ReadLine());
+                        }
+
+                        if (numerot[0] > numerot[1] && numerot[0] > numerot[2] && numerot[0] > numerot[3] && numerot[0] > numerot[4])
+                        {
+                            Console.WriteLine("{0}", numerot[0]);
+                        }
+                        else if (numerot[1] > numerot[0] && numerot[1] > numerot[2] && numerot[1] > numerot[3] && numerot[1] > numerot[4])
+                        {
+                            Console.WriteLine("{0}", numerot[1]);
+                        }
+                        else if (numerot[2] > numerot[1] && numerot[2] > numerot[0] && numerot[2] > numerot[3] && numerot[2] > numerot[4])
+                        {
+                            Console.WriteLine("{0}", numerot[2]);
+                        }
+                        else if (numerot[3] > numerot[1] && numerot[3] > numerot[2] && numerot[3] > numerot[0] && numerot[3] > numerot[4])
+                        {
+                            Console.WriteLine("{0}", numerot[3]);
+                        }
+                        else
+                        {
+                            Console.WriteLine("{0}", numerot[4]);
+                        }
+                        break;
+
+                    case 5:
+                        takaisin1:
+                        Console.WriteLine("Syötä joko kokonaisluku, desimaali, tai merkkijono, niin teen sille jotain hinenoa.");
+                        Console.WriteLine("-----------------------------------------------------------------------------------");
+
+                        Console.Write("Syötä kokonaisluku (1), desimaali (2) tai merkkijono (3): ");
+                        int vastus = int.Parse(Console.ReadLine());
+
+                        switch (vastus)
+                        {
+                            case 1:
+                                Console.Write("Syötä kokonaisluku: ");
+                                int kokonaisluku = int.Parse(Console.ReadLine());
+                                Console.WriteLine("{0}", kokonaisluku + 1);
+                                break;
+                            case 2:
+                                Console.Write("Syötä desimaaliluku: ");
+                                double desimaali = double.Parse(Console.ReadLine());
+                                Console.WriteLine("{0}", desimaali + 1);
+                                break;
+                            case 3:
+                                Console.Write("Syötä sana: ");
+                                string merkkijono = Console.ReadLine();
+                                Console.WriteLine("{0}", merkkijono + "*");
+                                break;
+                            default:
+                                Console.WriteLine("Teit jotain väärin, kokeile uudestaan.");
+                                goto takaisin1;
+                        }
+                        break;
+
+                    case 6:
+                        takaisin2:
+                        Console.WriteLine("Syötä tähän pisteesi, niin kasvatan sitä.");
+                        Console.WriteLine("-----------------------------------");
+
+                        Console.Write("Anna pisteesi (0-9): ");
+                        int pisteet = int.Parse(Console.ReadLine());
+
+                        if (pisteet > 0 && pisteet < 4)
+                        {
+                            Console.WriteLine("{0}", pisteet * 10);
+                        }
+                        else if (pisteet > 3 && pisteet < 7)
+                        {
+                            Console.WriteLine("{0}", pisteet * 100);
+                        }
+                        else if (pisteet > 6 && pisteet < 10)
+                        {
+                            Console.WriteLine("{0}", pisteet * 1000);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Ei ole mahdollista saada enempää kuin 9 tai vähempää kuin 1, kokeile uudestaan.");
+                            goto takaisin2;
+                        }
+                        break;
+
+                    case 7:
+                    takaisin4:
+                        Console.WriteLine("Syötä tähän luku 0-999 väliltä, niin tulostan sen sinulle sanoina");
+                        Console.WriteLine("-----------------------------------------------------------------");
+
+                        string[] yksiköt =
+                        {
+                            "Nolla",
+                            "yksi",
+                            "kaksi",
+                            "kolme",
+                            "neljä",
+                            "viisi",
+                            "kuusi",
+                            "seitsämän",
+                            "kahdeksan",
+                            "yhdeksän",
+                            "kymmenen",
+                            "yksitoista",
+                            "kaksitoista",
+                            "kolmetoista",
+                            "neljätoista",
+                            "viisitoista",
+                            "kuusitoista",
+                            "seitsämäntoista",
+                            "kahdeksantoista",
+                            "yhdeksäntoista"
+                        };
+                        // Taulukko 0-19
+
+                        string[] kymmenet =
+                        {
+                            "kaksikymmentä",
+                            "kolmekymmentä",
+                            "neljäkymmentä",
+                            "viisikymmentä",
+                            "kuusikymmentä",
+                            "seitsämänkymmentä",
+                            "kahdeksankymmentä",
+                            "yhdeksänkymmentä"
+                        };
+                        // Taulukko 10-90
+
+                        Console.Write("Anna luku 0-999 väliltä: ");
+                        string annettuluku = Console.ReadLine();   // Lukee annetun luvun string-muodossa
+                        int numero2 = int.Parse(annettuluku);   // Numero muuttujan on annettuluku parsettuna lyhentääkseen koodia
+
+                        Console.WriteLine("");
+
+                        if (numero2 < 20)    // Numerot 1-19
+                        {
+                            Console.WriteLine(yksiköt[int.Parse(annettuluku)]);    // Tulostaa 1-19
+                        }
+
+                        else if (numero2 > 19 && numero2 < 100)    // Numerot 20-99 
+                        {
+                            if (annettuluku.EndsWith("0"))     // Tasa kymmenet
+                            {
+                                Console.WriteLine(kymmenet[int.Parse(annettuluku.Substring(0, 1)) - 2]);     // Tulostaa tasa kymmenen
+                            }
+
+                            else    // Epätasaiset kymmenet
+                            {
+                                Console.WriteLine("{0} {1}", kymmenet[int.Parse(annettuluku.Substring(0, 1)) - 2], yksiköt[int.Parse(annettuluku.Substring(1))]);
+                            }
+                        }
+
+                        else if (numero2 > 99 && numero2 < 1000)   // Luvut 100-999
+                        {
+                            if (numero2 == 100)   // Sadan
+                            {
+                                Console.WriteLine("sata");
+                            }
+
+                            else if (numero2 > 100 && numero2 < 120)      // Epätasaiset sadat 101-119
+                            {
+                                Console.WriteLine("sata {0}", yksiköt[int.Parse(annettuluku.Substring(1))]);
+                            }
+
+                            else if (numero2 > 119 && numero2 < 199)      // Luvut 120-199
+                            {
+                                if (annettuluku.EndsWith("0"))
+                                {
+                                    Console.WriteLine("sata {0}", kymmenet[int.Parse(annettuluku.Substring(1, 1)) - 2]);
+                                }
+
+                                else
+                                {
+                                    Console.WriteLine("sata {0} {1}", kymmenet[int.Parse(annettuluku.Substring(1, 1)) - 2], yksiköt[int.Parse(annettuluku.Substring(2))]);
+                                }
+                            }
+
+                            else if (numero2 > 199 && numero2 < 1000)
+                            {
+                                if (annettuluku.EndsWith("00"))
+                                {
+                                    Console.WriteLine("{0}sataa", yksiköt[int.Parse(annettuluku.Substring(0, 1))]);
+                                }
+
+                                else if (annettuluku.EndsWith("0"))
+                                {
+                                    Console.WriteLine("{0}sataa {1}", yksiköt[int.Parse(annettuluku.Substring(0, 1))], kymmenet[int.Parse(annettuluku.Substring(1, 1)) - 2]);
+                                }
+
+                                else if (annettuluku.Substring(1, 1) == "0")
+                                {
+                                    Console.WriteLine("{0}sataa {1}", yksiköt[int.Parse(annettuluku.Substring(0, 1))], yksiköt[int.Parse(annettuluku.Substring(2))]);
+                                }
+
+                                else    // Epätasaiset loput sadat
+                                {
+                                    Console.WriteLine("{0}sataa {1} {2}", yksiköt[int.Parse(annettuluku.Substring(0, 1))], kymmenet[int.Parse(annettuluku.Substring(1, 1)) - 2], yksiköt[int.Parse(annettuluku.Substring(2))]);      // Tulostaa epätasaiset sadat esim: 473
+                                }
+                            }
+
+                        }
+
+                        else
+                        {
+                            Console.Write("Joku meni vikaan. Haluatko kokeilla uudestaan? (K/E): ");
+                            string vastaus = Console.ReadLine();
+
+                            if (vastaus == "K" || vastaus == "k")
+                            {
+                                goto takaisin4;
+                            }
+                        }
+                        break;
+                }
+
+                Console.WriteLine();
+                Console.Write("Haluatko jatkaa? (K/E): ");
+                string vastaus1 = Console.ReadLine();
+
+                if (vastaus1 == "K" || vastaus1 == "k")
                 {
-                    Console.WriteLine("sata");
+                    goto alku;
                 }
-
-                else if (numero2 > 100 && numero2 < 120)      // Epätasaiset sadat 101-119
+                
+                else
                 {
-                    Console.WriteLine("sata {0}", yksiköt[int.Parse(annettuluku.Substring(1))]);
+                    break;
                 }
 
-                else if (numero2 > 119 && numero2 < 199)      // Luvut 120-199
-                {
-                    if (annettuluku.EndsWith("0"))
-                    {
-                        Console.WriteLine("sata {0}", kymmenet[int.Parse(annettuluku.Substring(1, 1)) - 2]);
-                    }
-
-                    else
-                    {
-                        Console.WriteLine("sata {0} {1}", kymmenet[int.Parse(annettuluku.Substring(1, 1)) - 2], yksiköt[int.Parse(annettuluku.Substring(2))]);
-                    }
-                }
-
-                else if (numero2 > 199 && numero2 < 1000)
-                {
-                    if (annettuluku.EndsWith("00"))
-                    {
-                        Console.WriteLine("{0}sataa", yksiköt[int.Parse(annettuluku.Substring(0, 1))]);
-                    }
-
-                    else if (annettuluku.EndsWith("0"))
-                    {
-                        Console.WriteLine("{0}sataa {1}", yksiköt[int.Parse(annettuluku.Substring(0, 1))], kymmenet[int.Parse(annettuluku.Substring(1, 1)) - 2]);
-                    }
-
-                    else if (annettuluku.Substring(1, 1) == "0")
-                    {
-                        Console.WriteLine("{0}sataa {1}", yksiköt[int.Parse(annettuluku.Substring(0, 1))], yksiköt[int.Parse(annettuluku.Substring(2))]);
-                    }
-
-                    else    // Epätasaiset loput sadat
-                    {
-                        Console.WriteLine("{0}sataa {1} {2}", yksiköt[int.Parse(annettuluku.Substring(1, 1))], kymmenet[int.Parse(annettuluku.Substring(1, 1)) - 2], yksiköt[int.Parse(annettuluku.Substring(2))]);      // Tulostaa epätasaiset sadat esim: 473
-                    }
-                }
-
-            }
-
-            else
-            {
-                Console.WriteLine("Joku meni vikaan. Kokeile uudelleen.");
-            }
-
-            // Harjoitus C 7 Loppuu //
+            } while (valinta != 0);
         }
     }
 }
