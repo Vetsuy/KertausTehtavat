@@ -135,7 +135,7 @@ namespace Harjoituksia_C
                         break;
 
                     case 4:
-                        Console.WriteLine("Syötä viisi eri kokonailukua, niin tulostan niistä suurimman.");
+                        Console.WriteLine("Syötä viisi eri kokonaislukua, niin tulostan niistä suurimman.");
                         Console.WriteLine("------------------------------------------------------------");
 
                         int[] numerot = { 0, 0, 0, 0, 0 };
