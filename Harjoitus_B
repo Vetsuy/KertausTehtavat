@@ -8,38 +8,46 @@ namespace Harjoituksia_B
         {
             Console.WriteLine("Veeti Eskelinen");
             Console.WriteLine("");
-            Console.Write("Anna y:n arvo: ");
-            int y = int.Parse(Console.ReadLine());
-            Console.Write("Anna x:n arvo: ");
-            int x = int.Parse(Console.ReadLine());
-            int xn = x;
-            int yn = y;
 
-            int vastaus = y + 3;
-            Console.WriteLine("tulostus x = {0}", vastaus);
+            Console.Write("Anna y:n arvo: ");       //  Kysyy y:n arvon
+            int y = int.Parse(Console.ReadLine());  //  Lukee y:n arvon
+            Console.Write("Anna x:n arvo: ");       //  Kysyy x:n arvon
+            int x = int.Parse(Console.ReadLine());  //  Lukee x:n arvon
+            int xn = x;     // Apumuuttuja
+            int yn = y;     // Apumuuttuja
+
+            int vastaus = y + 3;                                //  Laskee laskun 
+            Console.WriteLine("tulostus x = {0}", vastaus);     //  Tulostaa vastauksen
+                                                                //  Kaikissa alemmissa sama
             vastaus = y - 2;
             Console.WriteLine("tulostus x = {0}", vastaus);
+
             vastaus = y * 5;
             Console.WriteLine("tulostus x = {0}", vastaus);
+
             vastaus = x / y;
             Console.WriteLine("tulostus x = {0}", vastaus);
+
             vastaus = x % y;
             Console.WriteLine("tulostus x = {0}", vastaus);
+
             vastaus = x += y;
             Console.WriteLine("tulostus x = {0}", vastaus);
-            x = xn;
-            y = yn;
+            x = xn;                                             //  Apumuuttuja estää muuttujan arvon muuttumista
+            y = yn;                                             //  Sama mutta toisin päin
+                                                                //  Alemmissa sama
             vastaus = x -= y;
             Console.WriteLine("tulostus x = {0}", vastaus);
             x = xn;
             y = yn;
-            vastaus = x *= y*5;
+
+            vastaus = x *= y * 5;
             Console.WriteLine("tulostus x = {0}", vastaus);
             x = xn;
             y = yn;
+
             vastaus = x /= y;
             Console.WriteLine("tulostus x = {0}", vastaus);
-
         }
     }
 }
