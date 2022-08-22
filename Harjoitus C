@@ -345,7 +345,8 @@ namespace Harjoituksia_C
 
                         else
                         {
-                            Console.Write("Joku meni vikaan. Haluatko kokeilla uudestaan? (K/E): ");
+                            Console.WriteLine();
+                            Console.Write("Valitsemaasi lukua ei ole listalla. Haluatko kokeilla uudestaan? (K/E): ");
                             string vastaus = Console.ReadLine();
 
                             if (vastaus == "K" || vastaus == "k")
@@ -356,7 +357,6 @@ namespace Harjoituksia_C
                         break;
                 }
 
-                Console.WriteLine();
                 Console.Write("Haluatko jatkaa? (K/E): ");
                 string vastaus1 = Console.ReadLine();
 
