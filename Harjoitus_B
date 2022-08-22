@@ -1,6 +1,6 @@
 using System;
 
-namespace HarjoituksiaBMatematiikka
+namespace Harjoituksia_B
 {
     class Program
     {
