@@ -1,8 +1,8 @@
 using System;
 
-namespace Harjoituksia_B
+namespace Harjoituksia_E
 {
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
@@ -16,23 +16,21 @@ namespace Harjoituksia_B
                 Console.WriteLine();
                 Console.WriteLine("Valitse mitä seuraavista halua kokeilla:");
                 Console.WriteLine("----------------------------------------------------------");
-                Console.WriteLine("(1).  Ohjelma, joka suorittaa yhteenlaskun");
-                Console.WriteLine("(2).  Ohjelma, joka suorittaa miinuslaskun.");
-                Console.WriteLine("(3).  Ohjelma, joka suorittaa kertolaskun.");
-                Console.WriteLine("(4).  Ohjelma, joka suorittaa jakolaskun.");
-                Console.WriteLine("(5).  Ohjelma, joka suorittaa jakojäännöslaskun.");
-                Console.WriteLine("(6).  Ohjelma, joka suorittaa yhteenlaskun.");
-                Console.WriteLine("(7).  Ohjelma, joka suorittaa miinuslaskun.");
-                Console.WriteLine("(8).  Ohjelma, joka suorittaa kertolaskun.");
-                Console.WriteLine("(9).  Ohjelma, joka suorittaa jakolaskun.");
+                Console.WriteLine("(1).  Ohjelma, joka kysyy käyttäjän nimeä ja tulostaa lauseen.");
+                Console.WriteLine("(2).  Ohjelma, joka pyytää käyttäjältä 10 suurempaa kokonaislukua ja tulostaa sen yhtä monta kertaa.");
+                Console.WriteLine("(3).  Ohjelma, joka pyytää sanaa ja vaihtaa ensimmäisen ja viimeisen kirjaimen paikkaa..");
+                Console.WriteLine("(4).  Ohjelma, joka pyytää kahta kokonaislukua ja kertoo niistä faktoja..");
+                Console.WriteLine("(5).  Ohjelma, joka pyytää käyttäjältä lausetta ja tulostaa lauseen pisimmän sanan.");
+                Console.WriteLine("(6).  Ohjelma, joka tulostaa parittomat luvut 1-99 väliltä.");
+                Console.WriteLine("(7).  Ohjelma, joka tulostaa kolmella jaolliset luvut 1-00 väliltä.");
                 Console.WriteLine("----------------------------------------------------------");
-                Console.Write("Valitse numero 1-9 jatkaaksesi tai 0 halutessasi lopettaa: ");
+                Console.Write("Valitse numero 1-7 jatkaaksesi tai 0 halutessasi lopettaa: ");
                 valinta = int.Parse(Console.ReadLine());
 
-                if (valinta < 0 || valinta > 9)
+                if (valinta < 0 || valinta > 7)
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Et valinnut 1-9 väliltä, yritä uudestaan.");
+                    Console.WriteLine("Et valinnut 1-7 väliltä, yritä uudestaan.");
                     goto alku;
                 }
 
@@ -41,92 +39,155 @@ namespace Harjoituksia_B
                     break;
                 }
 
-                Console.Write("Anna y:n arvo: ");
-                int y = int.Parse(Console.ReadLine());
-                Console.Write("Anna x:n arvo: ");
-                int x = int.Parse(Console.ReadLine());
-
                 switch (valinta)
                 {
                     case 1:
                         Console.WriteLine();
-                        Console.WriteLine("Tässä laskusi x = y + 3 tulos.");
-                        Console.WriteLine("------------------------------");
+                        Console.WriteLine("Anna ikäsi niin tulostan sen mysteerilauseen mukana.");
+                        Console.WriteLine("----------------------------------------------------");
 
-                        int vastaus = y + 3;
-                        Console.WriteLine("tulostus x = {0}", vastaus);
+                        Console.Write("Anna ikäsi: ");
+                        int ika = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine("{0} - Näytät ikäistäsi nuoremmalta", ika);
                         break;
 
                     case 2:
+                        kohta2:
                         Console.WriteLine();
-                        Console.WriteLine("Tässä laskusi x = y - 2 tulos.");
-                        Console.WriteLine("------------------------------");
+                        Console.WriteLine("Anna 10 isompi luku niin tulostan sen niin monta kertaa kuin valitsemasi numero on.");
+                        Console.WriteLine("-----------------------------------------------------------------------------------");
 
-                        vastaus = y - 2;
-                        Console.WriteLine("tulostus x = {0}", vastaus);
+                        Console.Write("Anna 10 isompi kokonaisluku: ");
+                        int luku = int.Parse(Console.ReadLine());
+
+                        if (luku < 10)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("Valitsemasi luku ei ole yli kymmentä, yritä uudestaan.");
+                            goto kohta2;
+                        }
+
+                        else if (luku > 10)
+                        {
+                            for (int i = 0; i <= luku; i++)
+                            {
+                                Console.WriteLine(luku);
+                            }
+                        }
                         break;
 
                     case 3:
                         Console.WriteLine();
-                        Console.WriteLine("Tässä laskusi x = y * 5 tulos.");
-                        Console.WriteLine("------------------------------");
+                        Console.WriteLine("Anna jokin sana, niin vaihdan ensimmäisen ja viimeisen kirjaimen paikkoja.");
+                        Console.WriteLine("--------------------------------------------------------------------------");
 
-                        vastaus = y * 5;
-                        Console.WriteLine("tulostus x = {0}", vastaus);
+                        Console.Write("Anna sana: ");
+                        string sana = Console.ReadLine();
+
+                        string[] sanat = sana.Split(' ');
+
+                        char[] kirjaimet;
+                        string eka, vika;
+                        string oikeinpain, toisinpain;
+                        string tulos = string.Empty;
+
+                        for (int i = 0; i < sanat.Length; i++)
+                        {
+                            kirjaimet = sanat[i].ToCharArray();
+                            eka = new string(kirjaimet[0], 1);
+                            vika = new string(kirjaimet[kirjaimet.Length - 1], 1);
+                            oikeinpain = eka.ToLower();
+                            toisinpain = vika.ToLower();
+
+                            kirjaimet[kirjaimet.Length - 1] = oikeinpain.ToCharArray()[0];
+                            kirjaimet[0] = toisinpain.ToCharArray()[0];
+
+                            tulos += new string(kirjaimet);
+                            tulos += " ";
+                        }
+
+                        Console.WriteLine(tulos);
                         break;
 
                     case 4:
                         Console.WriteLine();
-                        Console.WriteLine("Tässä laskusi x = x / y tulos.");
-                        Console.WriteLine("------------------------------");
+                        Console.WriteLine("Anna kaksi kokonaislukua, niin kerron niistä jotain kiinnostavaa.");
+                        Console.WriteLine("-----------------------------------------------------------------");
 
-                        vastaus = x / y;
-                        Console.WriteLine("tulostus x = {0}", vastaus);
+                        int[] luvut = { 0, 0 };
+
+                        for (int i = 0; i < 2; i++)
+                        {
+                            Console.Write("Anna kokonaisluku: ");
+                            luvut[i] = int.Parse(Console.ReadLine());
+                        }
+
+                        if (luvut[0] > 0 && luvut[1] > 0)
+                        {
+                            Console.WriteLine("Molemmat ovat positiivisia");
+                        }
+                        else if (luvut[0] < 0 && luvut[1] < 0)
+                        {
+                            Console.WriteLine("Molemmat ovat negatiivisia");
+                        }
+                        else if (luvut[0] < 0 && luvut[1] > 0 || luvut[0] > 0 && luvut[1] < 0)
+                        {
+                            Console.WriteLine("Toinen on positiivinen ja toinen negatiivinen");
+                        }
                         break;
 
                     case 5:
                         Console.WriteLine();
-                        Console.WriteLine("Tässä laskusi x = x % y tulos.");
-                        Console.WriteLine("------------------------------");
+                        Console.WriteLine("Anna lause, niin tulostan vain sen pisimmän sanan.");
+                        Console.WriteLine("--------------------------------------------------");
 
-                        vastaus = x % y;
-                        Console.WriteLine("tulostus x = {0}", vastaus);
+                        Console.Write("Kirjoita lause: ");
+                        string lause = Console.ReadLine();
+
+                        string[] sanat1 = lause.Split(new[] { " " }, StringSplitOptions.None);
+                        string sana1 = "";
+                        int pituus = 0;
+                        foreach (String pisin in sanat1)
+                        {
+                            if (pisin.Length > pituus)
+                            {
+                                sana1 = pisin;
+                                pituus = pisin.Length;
+                            }
+                        }
+
+                        Console.WriteLine(sana1);
                         break;
 
                     case 6:
                         Console.WriteLine();
-                        Console.WriteLine("Tässä laskusi x += y tulos.");
-                        Console.WriteLine("---------------------------");
+                        Console.WriteLine("Tulostan parittomat luvut 1-99 väliltä.");
+                        Console.WriteLine("---------------------------------------");
 
-                        vastaus = x += y;
-                        Console.WriteLine("tulostus x = {0}", vastaus);
+                        Console.WriteLine("Parittomat luvut");
+                        for (int i = 1; i < (99 + 1); i++)
+                        {
+                            if (i % 2 != 0)
+                            {
+                                Console.WriteLine(i);
+                            }
+                        }
                         break;
 
                     case 7:
                         Console.WriteLine();
-                        Console.WriteLine("Tässä laskusi x -= y tulos.");
-                        Console.WriteLine("---------------------------");
+                        Console.WriteLine("Tulostan kolmella jaettavat luvut 1-99 väliltä.");
+                        Console.WriteLine("-----------------------------------------------");
 
-                        vastaus = x -= y;
-                        Console.WriteLine("tulostus x = {0}", vastaus);
-                        break;
-
-                    case 8:
-                        Console.WriteLine();
-                        Console.WriteLine("Tässä laskusi x *= y * 5 tulos.");
-                        Console.WriteLine("-------------------------------");
-
-                        vastaus = x *= y * 5;
-                        Console.WriteLine("tulostus x = {0}", vastaus);
-                        break;
-
-                    case 9:
-                        Console.WriteLine();
-                        Console.WriteLine("Tässä laskusi x /= y tulos.");
-                        Console.WriteLine("---------------------------");
-
-                        vastaus = x /= y;
-                        Console.WriteLine("tulostus x = {0}", vastaus);
+                        Console.WriteLine("Kolmella Jaolliset luvut");
+                        for (int i = 1; i <= 99; i++)
+                        {
+                            if (i % 3 == 0)
+                            {
+                                Console.WriteLine(i);
+                            }
+                        }
                         break;
                 }
 
