@@ -42,7 +42,7 @@ namespace Harjoituksia_D
 
                     case 2:
                         Console.WriteLine();
-                        Console.WriteLine("Tässä sinulle Fahrenheit aste, kun Celsius aste on 15°C.");
+                        Console.WriteLine("Tässä sinulle Fahrenheit aste, kun Celsius-aste on 15°C.");
                         Console.WriteLine("--------------------------------------------------------");
 
                         Console.WriteLine(15 * 1.8 + 32);
