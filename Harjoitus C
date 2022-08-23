@@ -14,7 +14,7 @@ namespace Harjoituksia_C
             int valinta = 1;
             do
             {
-                alku:
+                alku:                                                                                               //  Valintataulukko
                 Console.WriteLine();
                 Console.WriteLine("Valitse mitä seuraavista halua kokeilla:");
                 Console.WriteLine("----------------------------------------------------------");
@@ -357,17 +357,26 @@ namespace Harjoituksia_C
                         break;
                 }
 
+                takaisinlopetus:
+                Console.WriteLine();
                 Console.Write("Haluatko jatkaa? (K/E): ");
-                string vastaus1 = Console.ReadLine();
+                string lopetus = Console.ReadLine();
 
-                if (vastaus1 == "K" || vastaus1 == "k")
+                if (lopetus == "K" || lopetus == "k")
                 {
                     goto alku;
                 }
-                
-                else
+
+                else if (lopetus == "E" || lopetus == "e")
                 {
                     break;
+                }
+
+                else
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Vastaathan K tai E joko lopettaaksesi tai jatkaaksesi! (Myös pienet kirjaimet käyvät.)");
+                    goto takaisinlopetus;
                 }
 
             } while (valinta != 0);
