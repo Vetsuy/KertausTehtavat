@@ -33,8 +33,13 @@ namespace Harjoituksia_C
 
                 if (valinta < 1 || valinta > 7)
                 {
-                    Console.WriteLine("Valitsemasi numero ei ole listalla. Kokeile uudestaan.");
+                    Console.WriteLine("Et valinnut 1-7 väliltä, yritä uudestaan.");
                     goto alku;
+                }
+                
+                if (valinta == 0) 
+                {
+                    break;
                 }
 
                 switch (valinta)
