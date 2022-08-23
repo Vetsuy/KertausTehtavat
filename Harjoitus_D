@@ -30,7 +30,7 @@ namespace Harjoituksia_D
                 Console.Write("Valitse numero 1-10 jatkaaksesi tai 0 halutessasi lopettaa: ");
                 valinta = int.Parse(Console.ReadLine());
                 
-                if (valinta < 0 || valinta > 11)
+                if (valinta < 0 || valinta > 10)
                 {
                     Console.WriteLine();
                     Console.WriteLine("Et valinnut 1-10 väliltä, yritä uudestaan.");
