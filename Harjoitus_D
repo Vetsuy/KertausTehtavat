@@ -29,6 +29,18 @@ namespace Harjoituksia_D
                 Console.WriteLine("----------------------------------------------------------");
                 Console.Write("Valitse numero 1-10 jatkaaksesi tai 0 halutessasi lopettaa: ");
                 valinta = int.Parse(Console.ReadLine());
+                
+                if (valinta < 0 || valinta > 11)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Et valinnut 1-10 väliltä, yritä uudestaan.");
+                    goto alku;
+                }
+
+                if (valinta == 0)
+                {
+                    break;
+                }
 
                 switch (valinta)
                 {
