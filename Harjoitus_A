@@ -6,60 +6,84 @@ namespace KertausProjekti
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hyvää päivää!");
-        }
-    }
-}
+            int valinta = 1;
+            do
+            {
+            alku:
+                Console.WriteLine();
+                Console.WriteLine("Valitse mitä seuraavista halua kokeilla:");
+                Console.WriteLine("--------------------------------------------");
+                Console.WriteLine("(1).  Ohjelma, joka tulostaa tervehdyksen.");
+                Console.WriteLine("(2).  Ohjelma, joka tulostaa nimen.");
+                Console.WriteLine("(3).  Ohjelma, joka tulostaa neljä riviä numeroita.");
+                Console.WriteLine("(4).  Ohjelma, joka kysyy nimeä ja tervehtii.");
+                Console.WriteLine("--------------------------------------------");
+                Console.Write("Valitse numero 1-4 jatkaaksesi tai 0 halutessasi lopettaa: ");
+                valinta = int.Parse(Console.ReadLine());
 
+                if (valinta < 0 || valinta > 4)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Et valinnut 1-4 väliltä, yritä uudestaan.");
+                    goto alku;
+                }
 
+                if (valinta == 0)
+                {
+                    break;
+                }
 
+                switch (valinta)
+                {
+                    case 1:
+                        Console.WriteLine();
+                        Console.WriteLine("Hyvää päivää!");
+                        break;
 
-using System;
+                    case 2:
+                        Console.WriteLine();
+                        Console.WriteLine("Veeti Eskelinen");
+                        break;
 
-namespace OmaNimi
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Veeti Eskelinen");
-        }
-    }
-}
+                    case 3:
+                        Console.WriteLine();
+                        Console.WriteLine("1");
+                        Console.WriteLine("11");
+                        Console.WriteLine("101");
+                        Console.WriteLine("1001");
+                        break;
 
+                    case 4:
+                        Console.WriteLine();
+                        Console.Write("Anna nimesi: ");
+                        string nimi = Console.ReadLine();
+                        Console.WriteLine("Hei {0}", nimi);
+                        break;
+                }
 
+                takaisinlopetus:
+                Console.WriteLine();
+                Console.Write("Haluatko jatkaa? (K/E): ");
+                string lopetus = Console.ReadLine();
 
+                if (lopetus == "K" || lopetus == "k")
+                {
+                    goto alku;
+                }
 
-using System;
+                else if (lopetus == "E" || lopetus == "e")
+                {
+                    break;
+                }
 
-namespace YksiNumero
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("1");
-            Console.WriteLine("11");
-            Console.WriteLine("101");
-            Console.WriteLine("1001");
-        }
-    }
-}
+                else
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Vastaathan K jatkaaksesi tai E lopettaaksesi! (Myös pienet kirjaimet käyvät.)");
+                    goto takaisinlopetus;
+                }
 
-
-
-
-using System;
-
-namespace NimiKysymys
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.Write("Anna nimesi: ");
-            string nimi = Console.ReadLine();
-            Console.WriteLine("Hei {0}", nimi);
+            } while (valinta != 0);
         }
     }
 }
