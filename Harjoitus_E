@@ -7,143 +7,213 @@ namespace Harjoituksia_E
         static void Main(string[] args)
         {
             Console.WriteLine("Veeti Eskelinen");
-            Console.WriteLine();
+            Console.WriteLine("");
 
-            // Tehtävä 11 alkaa
-
-            Console.Write("Anna ikäsi: ");
-            int ika = int.Parse(Console.ReadLine());  
-            
-            Console.WriteLine("{0} - Näytät ikäistäsi nuoremmalta", ika);
-
-            // Tehtävä 11 loppuu
-
-            Console.WriteLine();
-
-            // Tehtävä 12 alkaa
-
-            Console.Write("Anna 10 isompi kokonaisluku: ");
-            int luku = int.Parse(Console.ReadLine());
-
-            for (int i = 0; i <= luku; i++)
+            int valinta = 1;
+            do
             {
-                Console.WriteLine(luku);
-            }
+            alku:
+                Console.WriteLine();
+                Console.WriteLine("Valitse mitä seuraavista halua kokeilla:");
+                Console.WriteLine("----------------------------------------------------------");
+                Console.WriteLine("(1).  Ohjelma, joka kysyy käyttäjän nimeä ja tulostaa lauseen.");
+                Console.WriteLine("(2).  Ohjelma, joka pyytää käyttäjältä 10 suurempaa kokonaislukua ja tulostaa sen yhtä monta kertaa.");
+                Console.WriteLine("(3).  Ohjelma, joka pyytää sanaa ja vaihtaa ensimmäisen ja viimeisen kirjaimen paikkaa..");
+                Console.WriteLine("(4).  Ohjelma, joka pyytää kahta kokonaislukua ja kertoo niistä faktoja..");
+                Console.WriteLine("(5).  Ohjelma, joka pyytää käyttäjältä lausetta ja tulostaa lauseen pisimmän sanan.");
+                Console.WriteLine("(6).  Ohjelma, joka tulostaa parittomat luvut 1-99 väliltä.");
+                Console.WriteLine("(7).  Ohjelma, joka tulostaa kolmella jaolliset luvut 1-00 väliltä.");
+                Console.WriteLine("----------------------------------------------------------");
+                Console.Write("Valitse numero 1-7 jatkaaksesi tai 0 halutessasi lopettaa: ");
+                valinta = int.Parse(Console.ReadLine());
 
-            // Tehtävä 12 loppuu
-
-            Console.WriteLine();
-
-            // Tehtävä 13 alkaa
-
-            Console.Write("Anna sana: ");
-            string sana = Console.ReadLine();
-
-            string[] sanat = sana.Split(' ');
-
-            char[] kirjaimet;
-            string eka, vika;
-            string oikein, toisinpain;
-            string tulos = string.Empty;
-
-            for (int i = 0; i < sanat.Length; i++)
-            {
-                kirjaimet = sanat[i].ToCharArray();
-                eka = new string(kirjaimet[0], 1);
-                vika = new string(kirjaimet[kirjaimet.Length - 1], 1);
-                oikein = eka.ToLower();
-                toisinpain = vika.ToLower();
-
-                kirjaimet[kirjaimet.Length - 1] = oikein.ToCharArray()[0];
-                kirjaimet[0] = toisinpain.ToCharArray()[0];
-
-                tulos += new string(kirjaimet);
-                tulos += " ";
-            }
-
-            Console.WriteLine(tulos);
-
-            // Tehtävä 13 loppuu
-
-            Console.WriteLine();
-
-            // Tehtävä 14 alkaa
-
-            int[] luvut = { 0, 0 };
-
-            for (int i = 0; i < 2; i++)
-            {
-                Console.Write("Anna kokonaisluku: ");
-                luvut[i] = int.Parse(Console.ReadLine());
-            }
-            
-            if (luvut[0] > 0 && luvut[1] > 0)
-            {
-                Console.WriteLine("Molemmat ovat positiivisia");
-            }
-            else if (luvut[0] < 0 && luvut[1] < 0)
-            {
-                Console.WriteLine("Molemmat ovat negatiivisia");
-            }
-            else if (luvut[0] < 0 && luvut[1] > 0 || luvut[0] > 0 && luvut[1] < 0)
-            {
-                Console.WriteLine("Toinen on positiivinen ja toinen negatiivinen");
-            }
-
-            // Tehtävä 14 loppuu
-
-            Console.WriteLine();
-
-            // Tehtävä 15 alkaa
-
-            Console.Write("Kirjoita lause: ");
-            string lause = Console.ReadLine();
-
-            string[] sanat1 = lause.Split(new[] { " " }, StringSplitOptions.None);
-            string sana1 = "";
-            int pituus = 0;
-            foreach (String pisin in sanat1)
-            {
-                if (pisin.Length > pituus)
+                if (valinta < 0 || valinta > 7)
                 {
-                    sana1 = pisin;
-                    pituus = pisin.Length;
+                    Console.WriteLine();
+                    Console.WriteLine("Et valinnut 1-7 väliltä, yritä uudestaan.");
+                    goto alku;
                 }
-            }
 
-            Console.WriteLine(sana1);
-
-            // Tehtävä 15 loppuu
-
-            Console.WriteLine();
-
-            // Tehtävä 16 alkaa
-
-            Console.WriteLine("Parittomat luvut");
-            for (int i = 1; i < (99 + 1); i++)
-            {
-                if (i % 2 != 0)
+                if (valinta == 0)
                 {
-                    Console.WriteLine(i);
+                    break;
                 }
-            }
 
-            // Tehtävä 16 loppuu
-
-            Console.WriteLine();
-
-            // Tehtävä 17 alkaa
-
-            Console.WriteLine("Kolmella Jaolliset luvut");
-            for (int i = 1; i <= 99; i++)
-            {
-                if (i % 3 == 0)
+                switch (valinta)
                 {
-                    Console.WriteLine(i);
-                }
-            }
+                    case 1:
+                        Console.WriteLine();
+                        Console.WriteLine("Anna ikäsi niin tulostan sen mysteerilauseen mukana.");
+                        Console.WriteLine("----------------------------------------------------");
 
-            // Tehtävä 17 loppuu
+                        Console.Write("Anna ikäsi: ");
+                        int ika = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine("{0} - Näytät ikäistäsi nuoremmalta", ika);
+                        break;
+
+                    case 2:
+                        kohta2:
+                        Console.WriteLine();
+                        Console.WriteLine("Anna 10 isompi luku niin tulostan sen niin monta kertaa kuin valitsemasi numero on.");
+                        Console.WriteLine("-----------------------------------------------------------------------------------");
+
+                        Console.Write("Anna 10 isompi kokonaisluku: ");
+                        int luku = int.Parse(Console.ReadLine());
+
+                        if (luku < 10)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("Valitsemasi luku ei ole yli kymmentä, yritä uudestaan.");
+                            goto kohta2;
+                        }
+
+                        else if (luku > 10)
+                        {
+                            for (int i = 0; i <= luku; i++)
+                            {
+                                Console.WriteLine(luku);
+                            }
+                        }
+                        break;
+
+                    case 3:
+                        Console.WriteLine();
+                        Console.WriteLine("Anna jokin sana, niin vaihdan ensimmäisen ja viimeisen kirjaimen paikkoja.");
+                        Console.WriteLine("--------------------------------------------------------------------------");
+
+                        Console.Write("Anna sana: ");
+                        string sana = Console.ReadLine();
+
+                        string[] sanat = sana.Split(' ');
+
+                        char[] kirjaimet;
+                        string eka, vika;
+                        string oikeinpain, toisinpain;
+                        string tulos = string.Empty;
+
+                        for (int i = 0; i < sanat.Length; i++)
+                        {
+                            kirjaimet = sanat[i].ToCharArray();
+                            eka = new string(kirjaimet[0], 1);
+                            vika = new string(kirjaimet[kirjaimet.Length - 1], 1);
+                            oikeinpain = eka.ToLower();
+                            toisinpain = vika.ToLower();
+
+                            kirjaimet[kirjaimet.Length - 1] = oikeinpain.ToCharArray()[0];
+                            kirjaimet[0] = toisinpain.ToCharArray()[0];
+
+                            tulos += new string(kirjaimet);
+                            tulos += " ";
+                        }
+
+                        Console.WriteLine(tulos);
+                        break;
+
+                    case 4:
+                        Console.WriteLine();
+                        Console.WriteLine("Anna kaksi kokonaislukua, niin kerron niistä jotain kiinnostavaa.");
+                        Console.WriteLine("-----------------------------------------------------------------");
+
+                        int[] luvut = { 0, 0 };
+
+                        for (int i = 0; i < 2; i++)
+                        {
+                            Console.Write("Anna kokonaisluku: ");
+                            luvut[i] = int.Parse(Console.ReadLine());
+                        }
+
+                        if (luvut[0] > 0 && luvut[1] > 0)
+                        {
+                            Console.WriteLine("Molemmat ovat positiivisia");
+                        }
+                        else if (luvut[0] < 0 && luvut[1] < 0)
+                        {
+                            Console.WriteLine("Molemmat ovat negatiivisia");
+                        }
+                        else if (luvut[0] < 0 && luvut[1] > 0 || luvut[0] > 0 && luvut[1] < 0)
+                        {
+                            Console.WriteLine("Toinen on positiivinen ja toinen negatiivinen");
+                        }
+                        break;
+
+                    case 5:
+                        Console.WriteLine();
+                        Console.WriteLine("Anna lause, niin tulostan vain sen pisimmän sanan.");
+                        Console.WriteLine("--------------------------------------------------");
+
+                        Console.Write("Kirjoita lause: ");
+                        string lause = Console.ReadLine();
+
+                        string[] sanat1 = lause.Split(new[] { " " }, StringSplitOptions.None);
+                        string sana1 = "";
+                        int pituus = 0;
+                        foreach (String pisin in sanat1)
+                        {
+                            if (pisin.Length > pituus)
+                            {
+                                sana1 = pisin;
+                                pituus = pisin.Length;
+                            }
+                        }
+
+                        Console.WriteLine(sana1);
+                        break;
+
+                    case 6:
+                        Console.WriteLine();
+                        Console.WriteLine("Tulostan parittomat luvut 1-99 väliltä.");
+                        Console.WriteLine("---------------------------------------");
+
+                        Console.WriteLine("Parittomat luvut");
+                        for (int i = 1; i < (99 + 1); i++)
+                        {
+                            if (i % 2 != 0)
+                            {
+                                Console.WriteLine(i);
+                            }
+                        }
+                        break;
+
+                    case 7:
+                        Console.WriteLine();
+                        Console.WriteLine("Tulostan kolmella jaettavat luvut 1-99 väliltä.");
+                        Console.WriteLine("-----------------------------------------------");
+
+                        Console.WriteLine("Kolmella Jaolliset luvut");
+                        for (int i = 1; i <= 99; i++)
+                        {
+                            if (i % 3 == 0)
+                            {
+                                Console.WriteLine(i);
+                            }
+                        }
+                        break;
+                }
+
+                takaisinlopetus:
+                Console.WriteLine();
+                Console.Write("Haluatko jatkaa? (K/E): ");
+                string lopetus = Console.ReadLine();
+
+                if (lopetus == "K" || lopetus == "k")
+                {
+                    goto alku;
+                }
+
+                else if (lopetus == "E" || lopetus == "e")
+                {
+                    break;
+                }
+
+                else
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Vastaathan K tai E joko lopettaaksesi tai jatkaaksesi! (Myös pienet kirjaimet käyvät.)");
+                    goto takaisinlopetus;
+                }
+
+            } while (valinta != 0);
         }
     }
 }
