@@ -1,6 +1,6 @@
 using System;
 
-namespace KertausProjekti
+namespace Harjoitusksia_A
 {
     class Program
     {
