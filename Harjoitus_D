@@ -9,120 +9,188 @@ namespace Harjoituksia_D
             Console.WriteLine("Veeti Eskelinen");
             Console.WriteLine();
 
-            // Tehtävä 1 alkaa
-
-            Console.WriteLine(1 + 2);
-
-            // Tehtävä 1 loppuu
-
-            Console.WriteLine();
-
-            // Tehtävä 2 alkaa
-
-            Console.WriteLine(15 * 1.8 + 32);
-
-            // Tehtävä 2 loppuu
-
-            Console.WriteLine();
-
-            // Tehtävä 3 alkaa
-
-            Console.WriteLine("{0}, {1}, {2}, {3}", 1 + 2, 5 - 3, 1 * 3, 8 / 2);
-
-            // Tehtävä 3 loppuu
-
-            Console.WriteLine();
-
-            // Tehtävä 4 alkaa
-
-            Console.WriteLine(13 % 4);
-
-            // Tehtävä 4 loppuu
-
-            Console.WriteLine();
-
-            // Tehtävä 5 alkaa
-
-            Console.Write("Anna nimesi: ");
-            string nimi = Console.ReadLine();
-
-            Console.WriteLine("Hei, {0}", nimi);
-
-            // Tehtävä 5 loppuu
-
-            Console.WriteLine();
-
-            // Tehtävä 6 alkaa
-
-            Console.Write("Anna numero: ");
-            int numero1 = int.Parse(Console.ReadLine());
-
-            Console.Write("Anna toinen numero: ");
-            int numero2 = int.Parse(Console.ReadLine());
-
-            Console.WriteLine(numero1 + numero2);
-
-            // Tehtävä 6 loppuu
-
-            Console.WriteLine();
-
-            // Tehtävä 7 alkaa
-
-            Console.Write("Anna celcius aste: ");
-            int celcius = int.Parse(Console.ReadLine());
-
-            Console.WriteLine(celcius * 1.8 + 32);
-
-            // Tehtävä 7 loppuu
-
-            Console.WriteLine();
-
-            // Tehtävä 8 alkaa
-
-            double[] luvut = { 0, 0 };
-
-            for (int i = 0; i < 2; i++)
+            int valinta = 1;
+            do
             {
-                Console.Write("Anna luku: ");
-                luvut[i] = double.Parse(Console.ReadLine());
-            }
+            alku:
+                Console.WriteLine();
+                Console.WriteLine("Valitse mitä seuraavista halua kokeilla:");
+                Console.WriteLine("----------------------------------------------------------");
+                Console.WriteLine("(1).  Ohjelma, joka laskee yhteenlaskun");
+                Console.WriteLine("(2).  Ohjelma, joka muuttaa Celsius-asteet Fahrenheiteiksi.");
+                Console.WriteLine("(3).  Ohjelma, joka laskee 4 peruslaskutoimitusta.");
+                Console.WriteLine("(4).  Ohjelma, joka laskee jakojäännöksen.");
+                Console.WriteLine("(5).  Ohjelma, joka pyytää nimeäsi ja palauttaa erään viestin.");
+                Console.WriteLine("(6).  Ohjelma, joka laskee yhteenlaskun antamillasi numeroilla.");
+                Console.WriteLine("(7).  Ohjelma, joka muuttaa Celsius-asteet Fahrenheiteiksi antamallasi arvolla.");
+                Console.WriteLine("(8).  Ohjelma, joka laskee 4 peruslaskutoimitusta antamillasi numeroilla.");
+                Console.WriteLine("(9).  Ohjelma, joka laskee jakojäännöksen antamillasi numeroilla.");
+                Console.WriteLine("(10). Ohjelma, joka tulostaa kertolaskutaulukon anatamallasi numerolla.");
+                Console.WriteLine("----------------------------------------------------------");
+                Console.Write("Valitse numero 1-10 jatkaaksesi tai 0 halutessasi lopettaa: ");
+                valinta = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("{0}, {1}, {2}, {3}", luvut[0] + luvut[1], luvut[0] - luvut[1], luvut[0] * luvut[1], luvut[0] / luvut[1]);
+                switch (valinta)
+                {
+                    case 1:
+                        Console.WriteLine();
+                        Console.WriteLine("Tässä sinulle 1 ja 2 yhteenlasku.");
+                        Console.WriteLine("---------------------------------");
 
-            // Tehtävä 8 loppuu
+                        Console.WriteLine(1 + 2);
+                        break;
 
-            Console.WriteLine();
+                    case 2:
+                        Console.WriteLine();
+                        Console.WriteLine("Tässä sinulle Fahrenheit aste, kun Celsius aste on 15°C.");
+                        Console.WriteLine("--------------------------------------------------------");
 
-            // Tehtävä 9 alkaa
+                        Console.WriteLine(15 * 1.8 + 32);
+                        break;
 
+                    case 3:
+                        Console.WriteLine();
+                        Console.WriteLine("Tässä sinulle 4 erilaista peruslaskutoimitusta.");
+                        Console.WriteLine("-----------------------------------------------");
 
-            int[] jaannostaulukko = { 0, 0 };
+                        Console.WriteLine("{0}, {1}, {2}, {3}", 1 + 2, 5 - 3, 1 * 3, 8 / 2);
+                        break;
 
-            for (int i = 0; i < 2; i++)
-            {
-                Console.Write("Anna luku: ");
-                jaannostaulukko[i] = int.Parse(Console.ReadLine());
-            }
+                    case 4:
+                        Console.WriteLine();
+                        Console.WriteLine("Tässä sinulle 13 ja 4 jakojäännös.");
+                        Console.WriteLine("----------------------------------");
 
-            Console.WriteLine(luvut[0] % luvut[1]);
+                        Console.WriteLine(13 % 4);
+                        break;
 
-            // Tehtävä 9 loppuu
+                    case 5:
+                        Console.WriteLine();
+                        Console.WriteLine("Syötä nimesi niin tervehdin sinua!");
+                        Console.WriteLine("----------------------------------");
 
-            Console.WriteLine();
+                        Console.Write("Anna nimesi: ");
+                        string nimi = Console.ReadLine();
 
-            // Tehtävä 10 alkaa
+                        Console.WriteLine("Hei, {0}, toivottavasti voit hyvin!", nimi);
+                        break;
 
-            Console.Write("Anna kokonaisluku 1-10 väliltä: ");
-            int luku = int.Parse(Console.ReadLine());
-            int kierros = 1;
+                    case 6:
+                        Console.WriteLine();
+                        Console.WriteLine("Syötä kaksi numeroa niin lasken ne yhteen.");
+                        Console.WriteLine("------------------------------------------");
 
-            while (kierros < 11)
-            {
-                Console.WriteLine("{0} x {1} = {2}", luku, kierros, luku * kierros);
-                kierros++;
-            }
+                        Console.Write("Anna numero: ");
+                        int numero1 = int.Parse(Console.ReadLine());
 
-            // Tehtävä 10 loppuu
+                        Console.Write("Anna toinen numero: ");
+                        int numero2 = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine();
+                        Console.Write("Kiitos! Tässä sinulle yhteenlasku antamillasi numeroilla: {0}", numero1 + numero2);
+                        Console.WriteLine();
+                        break;
+
+                    case 7:
+                        Console.WriteLine();
+                        Console.WriteLine("Syötä tähän Celsius-aste niin muutan sen Fahrenheitiksi.");
+                        Console.WriteLine("--------------------------------------------------------");
+
+                        Console.Write("Anna celcius aste: ");
+                        int celcius = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine();
+                        Console.Write("Kiitos! Tässä sinulle Fahrenheittisi Celsiuksesta muutettuna: {0}", celcius * 1.8 + 32);
+                        Console.WriteLine();
+                        break;
+
+                    case 8:
+                        Console.WriteLine();
+                        Console.WriteLine("Syötä kaksi numero, niin lasken niillä 4 erilaista peruslaskutoimitusta.");
+                        Console.WriteLine("------------------------------------------------------------------------");
+
+                        double[] luvut = { 0, 0 };
+
+                        for (int i = 0; i < 2; i++)
+                        {
+                            Console.Write("Anna luku: ");
+                            luvut[i] = double.Parse(Console.ReadLine());
+                        }
+
+                        Console.WriteLine();
+                        Console.Write("Kiitos! Tässä sinulle 4 peruslaskutoimitustasi: {0}, {1}, {2}, {3}", luvut[0] + luvut[1], luvut[0] - luvut[1], luvut[0] * luvut[1], luvut[0] / luvut[1]);
+                        Console.WriteLine();
+                        break;
+
+                    case 9:
+                        Console.WriteLine();
+                        Console.WriteLine("Syötä kaksi numeroa, niin lasken niiden jakojäänteen.");
+                        Console.WriteLine("-----------------------------------------------------");
+
+                        int[] jaannostaulukko = { 0, 0 };
+
+                        for (int i = 0; i < 2; i++)
+                        {
+                            Console.Write("Anna luku: ");
+                            jaannostaulukko[i] = int.Parse(Console.ReadLine());
+                        }
+
+                        Console.WriteLine();
+                        Console.Write("Kiitos! Tässä sinulle jakojäänteesi: {0}", jaannostaulukko[0] % jaannostaulukko[1]);
+                        Console.WriteLine();
+                        break;
+
+                    case 10:
+                        kohta10:
+                        Console.WriteLine();
+                        Console.WriteLine("Syötä tähän numero 1-10 väliltä, niin teen siitä kertolaskutaulukon.");
+                        Console.WriteLine("--------------------------------------------------------------------");
+
+                        Console.Write("Anna kokonaisluku 1-10 väliltä: ");
+                        int luku = int.Parse(Console.ReadLine());
+                        int kierros = 1;
+
+                        if (luku < 1 || luku > 10)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("Et antanut kokonaislukua 1-10 väliltä. Yritä uudestaan.");
+                            goto kohta10;
+                        }
+
+                        else
+                        {
+                            while (kierros < 11)
+                            {
+                                Console.WriteLine("{0} x {1} = {2}", luku, kierros, luku * kierros);
+                                kierros++;
+                            }
+                        }
+                        break;
+                }
+
+                takaisinlopetus:
+                Console.WriteLine();
+                Console.Write("Haluatko jatkaa? (K/E): ");
+                string lopetus = Console.ReadLine();
+
+                if (lopetus == "K" || lopetus == "k")
+                {
+                    goto alku;
+                }
+
+                else if (lopetus == "E" || lopetus == "e")
+                {
+                    break;
+                }
+                
+                else
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Vastaathan K tai E joko lopettaaksesi tai jatkaaksesi! (Myös pienet kirjaimet käyvät.)");
+                    goto takaisinlopetus;
+                }
+
+            } while (valinta != 0);
         }
     }
 }
