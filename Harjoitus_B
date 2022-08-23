@@ -9,45 +9,150 @@ namespace Harjoituksia_B
             Console.WriteLine("Veeti Eskelinen");
             Console.WriteLine("");
 
-            Console.Write("Anna y:n arvo: ");       //  Kysyy y:n arvon
-            int y = int.Parse(Console.ReadLine());  //  Lukee y:n arvon
-            Console.Write("Anna x:n arvo: ");       //  Kysyy x:n arvon
-            int x = int.Parse(Console.ReadLine());  //  Lukee x:n arvon
-            int xn = x;     // Apumuuttuja
-            int yn = y;     // Apumuuttuja
+            int valinta = 1;
+            do
+            {
+            alku:
+                Console.WriteLine();
+                Console.WriteLine("Valitse mitä seuraavista halua kokeilla:");
+                Console.WriteLine("----------------------------------------------------------");
+                Console.WriteLine("(1).  Ohjelma, joka suorittaa yhteenlaskun");
+                Console.WriteLine("(2).  Ohjelma, joka suorittaa miinuslaskun.");
+                Console.WriteLine("(3).  Ohjelma, joka suorittaa kertolaskun.");
+                Console.WriteLine("(4).  Ohjelma, joka suorittaa jakolaskun.");
+                Console.WriteLine("(5).  Ohjelma, joka suorittaa jakojäännöslaskun.");
+                Console.WriteLine("(6).  Ohjelma, joka suorittaa yhteenlaskun.");
+                Console.WriteLine("(7).  Ohjelma, joka suorittaa miinuslaskun.");
+                Console.WriteLine("(8).  Ohjelma, joka suorittaa kertolaskun.");
+                Console.WriteLine("(9).  Ohjelma, joka suorittaa jakolaskun.");
+                Console.WriteLine("----------------------------------------------------------");
+                Console.Write("Valitse numero 1-9 jatkaaksesi tai 0 halutessasi lopettaa: ");
+                valinta = int.Parse(Console.ReadLine());
 
-            int vastaus = y + 3;                                //  Laskee laskun 
-            Console.WriteLine("tulostus x = {0}", vastaus);     //  Tulostaa vastauksen
-                                                                //  Kaikissa alemmissa sama
-            vastaus = y - 2;
-            Console.WriteLine("tulostus x = {0}", vastaus);
+                if (valinta < 0 || valinta > 9)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Et valinnut 1-9 väliltä, yritä uudestaan.");
+                    goto alku;
+                }
 
-            vastaus = y * 5;
-            Console.WriteLine("tulostus x = {0}", vastaus);
+                if (valinta == 0)
+                {
+                    break;
+                }
 
-            vastaus = x / y;
-            Console.WriteLine("tulostus x = {0}", vastaus);
+                Console.Write("Anna y:n arvo: ");
+                int y = int.Parse(Console.ReadLine());
+                Console.Write("Anna x:n arvo: ");
+                int x = int.Parse(Console.ReadLine());
 
-            vastaus = x % y;
-            Console.WriteLine("tulostus x = {0}", vastaus);
+                switch (valinta)
+                {
+                    case 1:
+                        Console.WriteLine();
+                        Console.WriteLine("Tässä laskusi x = y + 3 tulos.");
+                        Console.WriteLine("------------------------------");
 
-            vastaus = x += y;
-            Console.WriteLine("tulostus x = {0}", vastaus);
-            x = xn;                                             //  Apumuuttuja estää muuttujan arvon muuttumista
-            y = yn;                                             //  Sama mutta toisin päin
-                                                                //  Alemmissa sama
-            vastaus = x -= y;
-            Console.WriteLine("tulostus x = {0}", vastaus);
-            x = xn;
-            y = yn;
+                        int vastaus = y + 3;
+                        Console.WriteLine("tulostus x = {0}", vastaus);
+                        break;
 
-            vastaus = x *= y * 5;
-            Console.WriteLine("tulostus x = {0}", vastaus);
-            x = xn;
-            y = yn;
+                    case 2:
+                        Console.WriteLine();
+                        Console.WriteLine("Tässä laskusi x = y - 2 tulos.");
+                        Console.WriteLine("------------------------------");
 
-            vastaus = x /= y;
-            Console.WriteLine("tulostus x = {0}", vastaus);
+                        vastaus = y - 2;
+                        Console.WriteLine("tulostus x = {0}", vastaus);
+                        break;
+
+                    case 3:
+                        Console.WriteLine();
+                        Console.WriteLine("Tässä laskusi x = y * 5 tulos.");
+                        Console.WriteLine("------------------------------");
+
+                        vastaus = y * 5;
+                        Console.WriteLine("tulostus x = {0}", vastaus);
+                        break;
+
+                    case 4:
+                        Console.WriteLine();
+                        Console.WriteLine("Tässä laskusi x = x / y tulos.");
+                        Console.WriteLine("------------------------------");
+
+                        vastaus = x / y;
+                        Console.WriteLine("tulostus x = {0}", vastaus);
+                        break;
+
+                    case 5:
+                        Console.WriteLine();
+                        Console.WriteLine("Tässä laskusi x = x % y tulos.");
+                        Console.WriteLine("------------------------------");
+
+                        vastaus = x % y;
+                        Console.WriteLine("tulostus x = {0}", vastaus);
+                        break;
+
+                    case 6:
+                        Console.WriteLine();
+                        Console.WriteLine("Tässä laskusi x += y tulos.");
+                        Console.WriteLine("---------------------------");
+
+                        vastaus = x += y;
+                        Console.WriteLine("tulostus x = {0}", vastaus);
+                        break;
+
+                    case 7:
+                        Console.WriteLine();
+                        Console.WriteLine("Tässä laskusi x -= y tulos.");
+                        Console.WriteLine("---------------------------");
+
+                        vastaus = x -= y;
+                        Console.WriteLine("tulostus x = {0}", vastaus);
+                        break;
+
+                    case 8:
+                        Console.WriteLine();
+                        Console.WriteLine("Tässä laskusi x *= y * 5 tulos.");
+                        Console.WriteLine("-------------------------------");
+
+                        vastaus = x *= y * 5;
+                        Console.WriteLine("tulostus x = {0}", vastaus);
+                        break;
+
+                    case 9:
+                        Console.WriteLine();
+                        Console.WriteLine("Tässä laskusi x /= y tulos.");
+                        Console.WriteLine("---------------------------");
+
+                        vastaus = x /= y;
+                        Console.WriteLine("tulostus x = {0}", vastaus);
+                        break;
+                }
+
+                takaisinlopetus:
+                Console.WriteLine();
+                Console.Write("Haluatko jatkaa? (K/E): ");
+                string lopetus = Console.ReadLine();
+
+                if (lopetus == "K" || lopetus == "k")
+                {
+                    goto alku;
+                }
+
+                else if (lopetus == "E" || lopetus == "e")
+                {
+                    break;
+                }
+
+                else
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Vastaathan K tai E joko lopettaaksesi tai jatkaaksesi! (Myös pienet kirjaimet käyvät.)");
+                    goto takaisinlopetus;
+                }
+
+            } while (valinta != 0);
         }
     }
 }
